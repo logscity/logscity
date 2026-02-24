@@ -23,83 +23,34 @@
       background-size:40px 40px;pointer-events:none;z-index:0;
     }
 
-    /* ─── LOGIN ─── */
-    #login-screen{
-      min-height:100vh;display:flex;align-items:center;justify-content:center;
-      position:relative;z-index:1;
-      background:radial-gradient(ellipse at 60% 40%,rgba(56,189,248,0.07) 0%,transparent 60%),
-                 radial-gradient(ellipse at 20% 80%,rgba(167,139,250,0.06) 0%,transparent 60%);
-    }
-    .login-box{
-      background:var(--card);border:1px solid var(--border);
-      border-radius:24px;padding:3rem;width:100%;max-width:420px;
-      box-shadow:0 0 80px rgba(56,189,248,0.08);
-    }
-    .login-logo{
-      font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;
-      text-align:center;margin-bottom:4px;
-      background:linear-gradient(135deg,#fff 30%,var(--accent) 70%,var(--accent2));
-      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-    }
+    /* LOGIN */
+    #login-screen{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;z-index:1;background:radial-gradient(ellipse at 60% 40%,rgba(56,189,248,0.07) 0%,transparent 60%),radial-gradient(ellipse at 20% 80%,rgba(167,139,250,0.06) 0%,transparent 60%);}
+    .login-box{background:var(--card);border:1px solid var(--border);border-radius:24px;padding:3rem;width:100%;max-width:420px;box-shadow:0 0 80px rgba(56,189,248,0.08);}
+    .login-logo{font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;text-align:center;margin-bottom:4px;background:linear-gradient(135deg,#fff 30%,var(--accent) 70%,var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
     .login-sub{text-align:center;color:var(--muted);font-size:0.82rem;margin-bottom:2.5rem;letter-spacing:0.5px;}
     .login-label{font-size:0.75rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;display:block;}
-    .login-input{
-      width:100%;padding:0.85rem 1.1rem;
-      background:var(--surface);border:1px solid var(--border);
-      border-radius:var(--radius);color:var(--text);
-      font-size:0.95rem;font-family:'Outfit',sans-serif;
-      outline:none;transition:border-color 0.2s;
-    }
+    .login-input{width:100%;padding:0.85rem 1.1rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);color:var(--text);font-size:0.95rem;font-family:'Outfit',sans-serif;outline:none;transition:border-color 0.2s;}
     .login-input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(56,189,248,0.08);}
-    .login-btn{
-      width:100%;padding:0.9rem;margin-top:1.5rem;
-      background:linear-gradient(135deg,var(--accent),var(--accent2));
-      color:#000;font-size:0.95rem;font-weight:700;
-      border:none;border-radius:var(--radius);cursor:pointer;
-      font-family:'Syne',sans-serif;letter-spacing:0.3px;
-      transition:all 0.2s;box-shadow:0 4px 20px rgba(56,189,248,0.2);
-    }
+    .login-btn{width:100%;padding:0.9rem;margin-top:1.5rem;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#000;font-size:0.95rem;font-weight:700;border:none;border-radius:var(--radius);cursor:pointer;font-family:'Syne',sans-serif;letter-spacing:0.3px;transition:all 0.2s;box-shadow:0 4px 20px rgba(56,189,248,0.2);}
     .login-btn:hover{transform:translateY(-1px);box-shadow:0 8px 30px rgba(56,189,248,0.3);}
     .login-error{color:var(--red);font-size:0.83rem;text-align:center;margin-top:1rem;display:none;padding:0.6rem;background:rgba(248,113,113,0.08);border-radius:8px;border:1px solid rgba(248,113,113,0.2);}
 
-    /* ─── ADMIN LAYOUT ─── */
+    /* LAYOUT */
     #admin-panel{display:none;}
     .admin-layout{display:flex;min-height:100vh;}
 
     /* SIDEBAR */
-    .sidebar{
-      width:252px;min-height:100vh;
-      background:var(--surface);border-right:1px solid var(--border);
-      display:flex;flex-direction:column;
-      position:fixed;top:0;left:0;bottom:0;z-index:50;
-      transition:transform 0.3s;
-    }
-    .sidebar-logo{
-      padding:1.5rem;border-bottom:1px solid var(--border);
-      font-family:'Syne',sans-serif;font-size:1.25rem;font-weight:800;
-    }
-    .sidebar-logo .lc-name{
-      background:linear-gradient(135deg,#fff 30%,var(--accent));
-      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-    }
+    .sidebar{width:252px;min-height:100vh;background:var(--surface);border-right:1px solid var(--border);display:flex;flex-direction:column;position:fixed;top:0;left:0;bottom:0;z-index:50;transition:transform 0.3s;}
+    .sidebar-logo{padding:1.5rem;border-bottom:1px solid var(--border);font-family:'Syne',sans-serif;font-size:1.25rem;font-weight:800;}
+    .sidebar-logo .lc-name{background:linear-gradient(135deg,#fff 30%,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
     .sidebar-logo small{display:block;font-size:0.68rem;color:var(--muted);font-family:'Outfit',sans-serif;font-weight:400;letter-spacing:1.5px;text-transform:uppercase;margin-top:2px;-webkit-text-fill-color:var(--muted);}
     .sidebar-nav{flex:1;padding:1rem 0;}
-    .nav-item{
-      display:flex;align-items:center;gap:10px;
-      padding:0.8rem 1.5rem;color:var(--muted);font-size:0.88rem;font-weight:500;
-      cursor:pointer;transition:all 0.2s;border-left:3px solid transparent;
-    }
+    .nav-item{display:flex;align-items:center;gap:10px;padding:0.8rem 1.5rem;color:var(--muted);font-size:0.88rem;font-weight:500;cursor:pointer;transition:all 0.2s;border-left:3px solid transparent;}
     .nav-item:hover{color:var(--text);background:rgba(56,189,248,0.04);}
     .nav-item.active{color:var(--accent);border-left-color:var(--accent);background:rgba(56,189,248,0.07);}
     .nav-icon{font-size:1rem;width:1.3rem;text-align:center;}
     .sidebar-footer{padding:1rem 1.5rem;border-top:1px solid var(--border);}
-    .logout-btn{
-      width:100%;padding:0.65rem;
-      background:rgba(248,113,113,0.08);color:var(--red);
-      border:1px solid rgba(248,113,113,0.2);border-radius:var(--radius);
-      font-size:0.83rem;font-weight:600;cursor:pointer;font-family:'Outfit',sans-serif;
-      transition:all 0.2s;
-    }
+    .logout-btn{width:100%;padding:0.65rem;background:rgba(248,113,113,0.08);color:var(--red);border:1px solid rgba(248,113,113,0.2);border-radius:var(--radius);font-size:0.83rem;font-weight:600;cursor:pointer;font-family:'Outfit',sans-serif;transition:all 0.2s;}
     .logout-btn:hover{background:rgba(248,113,113,0.18);}
 
     /* MAIN */
@@ -121,11 +72,7 @@
     /* TABLE */
     .table-wrap{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
     .table-toolbar{padding:1rem 1.5rem;border-bottom:1px solid var(--border);display:flex;gap:1rem;flex-wrap:wrap;align-items:center;}
-    .search-input{
-      flex:1;min-width:200px;padding:0.6rem 1rem;
-      background:var(--surface);border:1px solid var(--border);
-      border-radius:100px;color:var(--text);font-size:0.88rem;font-family:'Outfit',sans-serif;outline:none;transition:border-color 0.2s;
-    }
+    .search-input{flex:1;min-width:200px;padding:0.6rem 1rem;background:var(--surface);border:1px solid var(--border);border-radius:100px;color:var(--text);font-size:0.88rem;font-family:'Outfit',sans-serif;outline:none;transition:border-color 0.2s;}
     .search-input:focus{border-color:var(--accent);}
     table{width:100%;border-collapse:collapse;}
     th{padding:0.75rem 1rem;text-align:left;font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--muted);border-bottom:1px solid var(--border);background:var(--surface);}
@@ -152,12 +99,7 @@
     .form-group.full{grid-column:1/-1;}
     .form-label{font-size:0.72rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.8px;}
     .form-label .req{color:var(--red);}
-    .form-input,.form-select,.form-textarea{
-      padding:0.78rem 1rem;
-      background:var(--surface);border:1px solid var(--border);
-      border-radius:var(--radius);color:var(--text);
-      font-size:0.9rem;font-family:'Outfit',sans-serif;outline:none;transition:border-color 0.2s;
-    }
+    .form-input,.form-select,.form-textarea{padding:0.78rem 1rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);color:var(--text);font-size:0.9rem;font-family:'Outfit',sans-serif;outline:none;transition:border-color 0.2s;}
     .form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(56,189,248,0.06);}
     .form-input.error,.form-select.error,.form-textarea.error{border-color:var(--red);}
     .form-select option{background:var(--card);}
@@ -182,15 +124,7 @@
     @keyframes dotPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.7)}}
 
     /* TOAST */
-    .toast{
-      position:fixed;bottom:2rem;right:2rem;
-      background:var(--card);border:1px solid var(--border);
-      border-radius:var(--radius);padding:1rem 1.5rem;
-      box-shadow:0 0 60px rgba(0,0,0,0.5);
-      display:flex;align-items:center;gap:10px;font-size:0.88rem;z-index:9999;
-      transform:translateY(100px);opacity:0;
-      transition:all 0.35s cubic-bezier(0.34,1.56,0.64,1);max-width:340px;
-    }
+    .toast{position:fixed;bottom:2rem;right:2rem;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.5rem;box-shadow:0 0 60px rgba(0,0,0,0.5);display:flex;align-items:center;gap:10px;font-size:0.88rem;z-index:9999;transform:translateY(100px);opacity:0;transition:all 0.35s cubic-bezier(0.34,1.56,0.64,1);max-width:340px;}
     .toast.show{transform:translateY(0);opacity:1;}
     .toast.success{border-left:3px solid var(--green);}
     .toast.error{border-left:3px solid var(--red);}
@@ -199,12 +133,7 @@
     /* MODAL */
     .modal-overlay{position:fixed;inset:0;background:rgba(4,6,14,0.8);backdrop-filter:blur(8px);z-index:200;display:none;align-items:center;justify-content:center;padding:1rem;}
     .modal-overlay.show{display:flex;}
-    .modal{
-      background:var(--card);border:1px solid rgba(56,189,248,0.2);
-      border-radius:20px;padding:2rem;width:100%;max-width:440px;
-      box-shadow:0 0 80px rgba(56,189,248,0.1);
-      animation:scaleIn 0.3s ease;
-    }
+    .modal{background:var(--card);border:1px solid rgba(56,189,248,0.2);border-radius:20px;padding:2rem;width:100%;max-width:440px;box-shadow:0 0 80px rgba(56,189,248,0.1);animation:scaleIn 0.3s ease;}
     @keyframes scaleIn{from{opacity:0;transform:scale(0.92)}to{opacity:1;transform:scale(1)}}
     .modal h3{font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:800;margin-bottom:8px;}
     .modal p{color:var(--subtext);font-size:0.88rem;margin-bottom:1.5rem;line-height:1.5;}
@@ -228,8 +157,8 @@
 <!-- LOGIN -->
 <div id="login-screen">
   <div class="login-box">
-    <div class="login-logo">🪵 LogsCity</div>
-    <div class="login-sub">Admin Portal — Authorized Access Only</div>
+    <div class="login-logo">LC Admin</div>
+    <div class="login-sub">LogsCity Portal — Authorized Access Only</div>
     <label class="login-label" for="pwd">Admin Password</label>
     <input type="password" id="pwd" class="login-input" placeholder="Enter your password…" autocomplete="off"/>
     <div class="login-error" id="login-error"></div>
@@ -242,24 +171,22 @@
   <button class="hamburger" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
   <div class="admin-layout">
 
-    <!-- SIDEBAR -->
     <nav class="sidebar" id="sidebar">
       <div class="sidebar-logo">
-        <span class="lc-name">🪵 LogsCity</span>
+        <span class="lc-name">LogsCity</span>
         <small>Admin Portal</small>
       </div>
       <div class="sidebar-nav">
         <div class="nav-item active" data-page="dashboard" onclick="showPage('dashboard')"><span class="nav-icon">📊</span> Dashboard</div>
-        <div class="nav-item" data-page="products" onclick="showPage('products')"><span class="nav-icon">📦</span> Products</div>
-        <div class="nav-item" data-page="add-product" onclick="showPage('add-product')"><span class="nav-icon">➕</span> Add Product</div>
-        <div class="nav-item" data-page="contacts" onclick="showPage('contacts')"><span class="nav-icon">📱</span> Contact Settings</div>
+        <div class="nav-item" data-page="products" onclick="showPage('products')"><span class="nav-icon">📱</span> Listings</div>
+        <div class="nav-item" data-page="add-product" onclick="showPage('add-product')"><span class="nav-icon">➕</span> Add Listing</div>
+        <div class="nav-item" data-page="contacts" onclick="showPage('contacts')"><span class="nav-icon">💬</span> Contact Settings</div>
       </div>
       <div class="sidebar-footer">
         <button class="logout-btn" onclick="logout()">🚪 Logout</button>
       </div>
     </nav>
 
-    <!-- MAIN -->
     <main class="main-content">
 
       <!-- DASHBOARD -->
@@ -268,69 +195,82 @@
           <div><div class="page-title">Dashboard</div><div class="page-sub">Welcome back, Admin</div></div>
         </div>
         <div class="stats-row">
-          <div class="stat-card"><div class="label">Total Products</div><div class="value" id="d-total">—</div></div>
+          <div class="stat-card"><div class="label">Total Listings</div><div class="value" id="d-total">—</div></div>
           <div class="stat-card"><div class="label">Available</div><div class="value" id="d-avail">—</div></div>
           <div class="stat-card"><div class="label">Limited Stock</div><div class="value" id="d-limited">—</div></div>
           <div class="stat-card"><div class="label">Featured</div><div class="value" id="d-featured">—</div></div>
         </div>
         <div class="form-section">
-          <div class="form-section-title">📋 Recent Products</div>
+          <div class="form-section-title">📋 Recent Listings</div>
           <div id="dash-recent"></div>
         </div>
       </div>
 
-      <!-- PRODUCTS LIST -->
+      <!-- LISTINGS TABLE -->
       <div class="page" id="page-products">
         <div class="page-header">
-          <div><div class="page-title">All Products</div><div class="page-sub">View, edit, or delete products</div></div>
-          <button class="btn btn-accent" onclick="showPage('add-product')">+ Add New Product</button>
+          <div><div class="page-title">All Listings</div><div class="page-sub">View, edit, or delete account listings</div></div>
+          <button class="btn btn-accent" onclick="showPage('add-product')">+ Add New Listing</button>
         </div>
         <div class="table-wrap">
           <div class="table-toolbar">
-            <input class="search-input" id="search-input" placeholder="🔍 Search products…" oninput="searchProducts()"/>
+            <input class="search-input" id="search-input" placeholder="🔍 Search listings…" oninput="searchProducts()"/>
             <div class="saving" id="save-indicator" style="display:none;"><div class="dot-spin"></div> Saving to GitHub…</div>
           </div>
           <table>
             <thead>
-              <tr><th>Image</th><th>ID</th><th>Name</th><th>Category</th><th>Price</th><th>Stock</th><th>Featured</th><th>Actions</th></tr>
+              <tr><th>Image</th><th>ID</th><th>Name</th><th>Platform</th><th>Price</th><th>Stock</th><th>Featured</th><th>Actions</th></tr>
             </thead>
             <tbody id="product-table-body"></tbody>
           </table>
         </div>
       </div>
 
-      <!-- ADD / EDIT PRODUCT -->
+      <!-- ADD / EDIT LISTING -->
       <div class="page" id="page-add-product">
         <div class="page-header">
-          <div><div class="page-title" id="form-page-title">Add New Product</div><div class="page-sub">Fill all required fields carefully</div></div>
+          <div><div class="page-title" id="form-page-title">Add New Listing</div><div class="page-sub">Fill all required fields carefully</div></div>
         </div>
         <form id="product-form" onsubmit="return false" novalidate>
           <div class="form-section">
-            <div class="form-section-title">🪵 Product Details</div>
+            <div class="form-section-title">📱 Account Details</div>
             <div class="form-grid">
               <div class="form-group">
-                <label class="form-label">Product Name <span class="req">*</span></label>
-                <input class="form-input" id="f-name" placeholder="e.g. Premium Hardwood Logs" maxlength="100"/>
-                <span class="field-error" id="e-name">Product name is required (min 2 characters).</span>
+                <label class="form-label">Listing Name <span class="req">*</span></label>
+                <input class="form-input" id="f-name" placeholder="e.g. Instagram Aged Account" maxlength="100"/>
+                <span class="field-error" id="e-name">Listing name is required (min 2 characters).</span>
               </div>
               <div class="form-group">
-                <label class="form-label">Category <span class="req">*</span></label>
+                <label class="form-label">Platform <span class="req">*</span></label>
                 <select class="form-select" id="f-category">
-                  <option value="">— Select Category —</option>
-                  <option>Hardwood</option><option>Softwood</option><option>Treated Wood</option>
-                  <option>Firewood</option><option>Bamboo</option><option>Timber</option><option>Other</option>
+                  <option value="">— Select Platform —</option>
+                  <option>Instagram</option>
+                  <option>Facebook</option>
+                  <option>TikTok</option>
+                  <option>Twitter</option>
+                  <option>Telegram</option>
+                  <option>YouTube</option>
+                  <option>Other</option>
                 </select>
-                <span class="field-error" id="e-category">Please select a category.</span>
+                <span class="field-error" id="e-category">Please select a platform.</span>
               </div>
               <div class="form-group">
                 <label class="form-label">Price (₦) <span class="req">*</span></label>
-                <input class="form-input" id="f-price" type="number" min="0" step="100" placeholder="e.g. 15000"/>
+                <input class="form-input" id="f-price" type="number" min="0" step="100" placeholder="e.g. 12000"/>
                 <span class="field-error" id="e-price">Valid price is required (numbers only).</span>
               </div>
               <div class="form-group">
                 <label class="form-label">Unit / Sold Per <span class="req">*</span></label>
-                <input class="form-input" id="f-unit" placeholder="e.g. per bundle, per piece"/>
+                <input class="form-input" id="f-unit" placeholder="e.g. per account, per channel"/>
                 <span class="field-error" id="e-unit">Unit is required.</span>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Followers / Subscribers</label>
+                <input class="form-input" id="f-followers" placeholder="e.g. 5K–10K, 1K+ subs"/>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Account Age</label>
+                <input class="form-input" id="f-accountAge" placeholder="e.g. 2 years, 6 months"/>
               </div>
               <div class="form-group">
                 <label class="form-label">Stock Status <span class="req">*</span></label>
@@ -338,12 +278,12 @@
                   <option value="">— Select Status —</option>
                   <option value="available">✅ Available</option>
                   <option value="limited">⚠️ Limited Stock</option>
-                  <option value="out">❌ Out of Stock</option>
+                  <option value="out">❌ Sold Out</option>
                 </select>
                 <span class="field-error" id="e-stock">Please select stock status.</span>
               </div>
               <div class="form-group">
-                <label class="form-label">Featured Product</label>
+                <label class="form-label">Featured Listing</label>
                 <select class="form-select" id="f-featured">
                   <option value="false">No</option>
                   <option value="true">⭐ Yes — Show as Featured</option>
@@ -351,14 +291,14 @@
               </div>
               <div class="form-group full">
                 <label class="form-label">Description <span class="req">*</span></label>
-                <textarea class="form-textarea" id="f-desc" placeholder="Describe this product clearly for customers… (min 20 characters)" maxlength="500"></textarea>
+                <textarea class="form-textarea" id="f-desc" placeholder="Describe this account clearly for buyers… (min 20 characters)" maxlength="500"></textarea>
                 <span class="field-error" id="e-desc">Description is required (min 20 characters).</span>
               </div>
             </div>
           </div>
 
           <div class="form-section">
-            <div class="form-section-title">🖼️ Product Image</div>
+            <div class="form-section-title">🖼️ Listing Image</div>
             <div class="form-grid">
               <div class="form-group">
                 <label class="form-label">Image URL <span class="req">*</span></label>
@@ -373,9 +313,9 @@
           </div>
 
           <div class="btn-row">
-            <button class="btn btn-accent" onclick="submitProduct()">💾 Save Product</button>
+            <button class="btn btn-accent" onclick="submitProduct()">💾 Save Listing</button>
             <button class="btn btn-ghost" onclick="resetForm();showPage('products')">Cancel</button>
-            <button class="btn btn-red" id="delete-product-btn" style="display:none" onclick="confirmDelete()">🗑️ Delete Product</button>
+            <button class="btn btn-red" id="delete-product-btn" style="display:none" onclick="confirmDelete()">🗑️ Delete Listing</button>
           </div>
         </form>
       </div>
@@ -386,7 +326,7 @@
           <div><div class="page-title">Contact Settings</div><div class="page-sub">Update WhatsApp, Telegram and business info</div></div>
         </div>
         <div class="form-section">
-          <div class="form-section-title">📱 Contact Details</div>
+          <div class="form-section-title">💬 Contact Details</div>
           <div class="form-grid">
             <div class="form-group">
               <label class="form-label">WhatsApp Number <span class="req">*</span></label>
@@ -410,7 +350,7 @@
             </div>
             <div class="form-group full">
               <label class="form-label">Tagline</label>
-              <input class="form-input" id="c-tagline" placeholder="Premium Logs & Timber Marketplace" maxlength="100"/>
+              <input class="form-input" id="c-tagline" placeholder="Nigeria's Trusted Social Media Accounts Marketplace" maxlength="100"/>
             </div>
           </div>
           <div class="btn-row">
@@ -435,7 +375,6 @@
   </div>
 </div>
 
-<!-- TOAST -->
 <div class="toast" id="toast"></div>
 
 <script>
@@ -487,7 +426,7 @@
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     document.getElementById('page-' + id).classList.add('active');
     document.querySelectorAll('.nav-item').forEach(n => n.classList.toggle('active', n.dataset.page === id));
-    if (id === 'add-product' && !editingId) { resetForm(); document.getElementById('form-page-title').textContent = 'Add New Product'; document.getElementById('delete-product-btn').style.display = 'none'; }
+    if (id === 'add-product' && !editingId) { resetForm(); document.getElementById('form-page-title').textContent = 'Add New Listing'; document.getElementById('delete-product-btn').style.display = 'none'; }
     if (id === 'dashboard') updateDash();
     if (window.innerWidth <= 768) document.getElementById('sidebar').classList.remove('open');
   }
@@ -508,6 +447,8 @@
   }
 
   // ─── DASHBOARD ───
+  const PLATFORM_ICONS = {Instagram:'📸',Facebook:'📘',TikTok:'🎵',Twitter:'🐦',Telegram:'✈️',YouTube:'▶️'};
+
   function updateDash() {
     document.getElementById('d-total').textContent   = allProducts.length;
     document.getElementById('d-avail').textContent   = allProducts.filter(p => p.stock === 'available').length;
@@ -516,11 +457,14 @@
     const recent = allProducts.slice(-5).reverse();
     document.getElementById('dash-recent').innerHTML = recent.length
       ? recent.map(p => `<div style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--border)">
-          <img src="${x(p.image)}" style="width:36px;height:36px;border-radius:8px;object-fit:cover;background:var(--surface)">
-          <div><strong style="color:var(--text)">${x(p.name)}</strong> <span style="color:var(--muted);font-size:0.78rem;font-family:monospace">${x(p.id)}</span></div>
+          <img src="${x(p.image)}" style="width:36px;height:36px;border-radius:8px;object-fit:cover;background:var(--surface)" onerror="this.style.opacity=0.2">
+          <div>
+            <strong style="color:var(--text)">${x(p.name)}</strong>
+            <span style="color:var(--muted);font-size:0.75rem;margin-left:8px">${PLATFORM_ICONS[p.category]||'📱'} ${x(p.category)}</span>
+          </div>
           <div style="margin-left:auto;font-family:'Syne',sans-serif;font-weight:800;color:var(--accent)">₦${Number(p.price).toLocaleString()}</div>
         </div>`).join('')
-      : '<p style="color:var(--muted)">No products yet.</p>';
+      : '<p style="color:var(--muted)">No listings yet.</p>';
   }
 
   // ─── TABLE ───
@@ -528,7 +472,7 @@
     const products = list || allProducts;
     const tbody    = document.getElementById('product-table-body');
     if (!products.length) {
-      tbody.innerHTML = `<tr><td colspan="8" style="text-align:center;padding:3rem;color:var(--muted)">No products found.</td></tr>`;
+      tbody.innerHTML = `<tr><td colspan="8" style="text-align:center;padding:3rem;color:var(--muted)">No listings found.</td></tr>`;
       return;
     }
     tbody.innerHTML = products.map(p => `
@@ -536,7 +480,7 @@
         <td><img class="prod-img-thumb" src="${x(p.image)}" onerror="this.style.opacity=0.2"></td>
         <td style="font-family:monospace;font-size:0.75rem;color:var(--accent)">${x(p.id)}</td>
         <td><strong>${x(p.name)}</strong></td>
-        <td>${x(p.category)}</td>
+        <td>${PLATFORM_ICONS[p.category]||'📱'} ${x(p.category)}</td>
         <td style="font-family:'Syne',sans-serif;font-weight:700">₦${Number(p.price).toLocaleString()}<br><span style="font-size:0.7rem;color:var(--muted);font-family:'Outfit',sans-serif;font-weight:400">${x(p.unit)}</span></td>
         <td><span class="badge ${p.stock==='available'?'badge-green':p.stock==='limited'?'badge-amber':'badge-red'}">${p.stock}</span></td>
         <td>${p.featured ? '⭐' : '—'}</td>
@@ -557,15 +501,17 @@
     const p = allProducts.find(prod => prod.id === id);
     if (!p) return;
     editingId = id;
-    document.getElementById('form-page-title').textContent = 'Edit Product';
-    document.getElementById('f-name').value     = p.name;
-    document.getElementById('f-category').value = p.category;
-    document.getElementById('f-price').value    = p.price;
-    document.getElementById('f-unit').value     = p.unit;
-    document.getElementById('f-stock').value    = p.stock;
-    document.getElementById('f-featured').value = String(p.featured);
-    document.getElementById('f-desc').value     = p.description;
-    document.getElementById('f-image').value    = p.image;
+    document.getElementById('form-page-title').textContent = 'Edit Listing';
+    document.getElementById('f-name').value      = p.name;
+    document.getElementById('f-category').value  = p.category;
+    document.getElementById('f-price').value     = p.price;
+    document.getElementById('f-unit').value      = p.unit;
+    document.getElementById('f-followers').value = p.followers  || '';
+    document.getElementById('f-accountAge').value= p.accountAge || '';
+    document.getElementById('f-stock').value     = p.stock;
+    document.getElementById('f-featured').value  = String(p.featured);
+    document.getElementById('f-desc').value      = p.description;
+    document.getElementById('f-image').value     = p.image;
     previewImg();
     document.getElementById('delete-product-btn').style.display = 'inline-flex';
     showPage('add-product');
@@ -581,7 +527,7 @@
 
   function resetForm() {
     editingId = null;
-    ['f-name','f-price','f-unit','f-desc','f-image'].forEach(id => document.getElementById(id).value = '');
+    ['f-name','f-price','f-unit','f-followers','f-accountAge','f-desc','f-image'].forEach(id => document.getElementById(id).value = '');
     ['f-category','f-stock'].forEach(id => document.getElementById(id).value = '');
     document.getElementById('f-featured').value = 'false';
     document.getElementById('img-preview-box').innerHTML = '<span>Enter URL to preview →</span>';
@@ -614,23 +560,25 @@
   async function submitProduct() {
     if (!validateProduct()) { showToast('Fix the errors before saving.', 'error'); return; }
     const product = {
-      name:document.getElementById('f-name').value.trim(),
-      category:document.getElementById('f-category').value,
-      price:Number(document.getElementById('f-price').value),
-      unit:document.getElementById('f-unit').value.trim(),
-      stock:document.getElementById('f-stock').value,
-      featured:document.getElementById('f-featured').value === 'true',
-      description:document.getElementById('f-desc').value.trim(),
-      image:document.getElementById('f-image').value.trim(),
-      currency:'NGN'
+      name:        document.getElementById('f-name').value.trim(),
+      category:    document.getElementById('f-category').value,
+      price:       Number(document.getElementById('f-price').value),
+      unit:        document.getElementById('f-unit').value.trim(),
+      followers:   document.getElementById('f-followers').value.trim(),
+      accountAge:  document.getElementById('f-accountAge').value.trim(),
+      stock:       document.getElementById('f-stock').value,
+      featured:    document.getElementById('f-featured').value === 'true',
+      description: document.getElementById('f-desc').value.trim(),
+      image:       document.getElementById('f-image').value.trim(),
+      currency:    'NGN'
     };
     setSaving(true);
     try {
       const res = editingId
-        ? await fetch(`${SERVER}/api/products/${editingId}`, {method:'PUT',   headers:authHeader(),body:JSON.stringify(product)})
-        : await fetch(`${SERVER}/api/products`,              {method:'POST',  headers:authHeader(),body:JSON.stringify(product)});
+        ? await fetch(`${SERVER}/api/products/${editingId}`, {method:'PUT',  headers:authHeader(),body:JSON.stringify(product)})
+        : await fetch(`${SERVER}/api/products`,              {method:'POST', headers:authHeader(),body:JSON.stringify(product)});
       if (res.ok) {
-        showToast(editingId ? '✅ Product updated and saved to GitHub!' : '✅ Product added and saved to GitHub!', 'success');
+        showToast(editingId ? '✅ Listing updated and saved to GitHub!' : '✅ Listing added and saved to GitHub!', 'success');
         await loadData(); resetForm(); showPage('products');
       } else { const e = await res.json(); showToast('Error: ' + (e.error||'Server error'), 'error'); }
     } catch { showToast('Network error. Check server connection.', 'error'); }
@@ -641,7 +589,7 @@
   function confirmDeleteProduct(id) {
     pendingDeleteId = id;
     const p = allProducts.find(prod => prod.id === id);
-    document.getElementById('modal-title').textContent = '🗑️ Delete Product';
+    document.getElementById('modal-title').textContent = '🗑️ Delete Listing';
     document.getElementById('modal-msg').textContent   = `Delete "${p ? p.name : id}"? This cannot be undone.`;
     document.getElementById('modal-confirm-btn').onclick = doDelete;
     document.getElementById('modal-overlay').classList.add('show');
@@ -652,7 +600,7 @@
     closeModal(); setSaving(true);
     try {
       const res = await fetch(`${SERVER}/api/products/${pendingDeleteId}`, {method:'DELETE',headers:authHeader()});
-      if (res.ok) { showToast('🗑️ Product deleted.', 'success'); await loadData(); showPage('products'); resetForm(); }
+      if (res.ok) { showToast('🗑️ Listing deleted.', 'success'); await loadData(); showPage('products'); resetForm(); }
       else { showToast('Delete failed. Try again.', 'error'); }
     } catch { showToast('Network error.', 'error'); }
     setSaving(false);
@@ -662,11 +610,11 @@
 
   // ─── CONTACTS ───
   function populateContactForm() {
-    document.getElementById('c-whatsapp').value    = allContact.whatsapp     || '';
-    document.getElementById('c-telegram').value    = allContact.telegram     || '';
-    document.getElementById('c-telegramLink').value= allContact.telegramLink || '';
-    document.getElementById('c-businessName').value= allContact.businessName || '';
-    document.getElementById('c-tagline').value     = allContact.tagline      || '';
+    document.getElementById('c-whatsapp').value     = allContact.whatsapp     || '';
+    document.getElementById('c-telegram').value     = allContact.telegram     || '';
+    document.getElementById('c-telegramLink').value  = allContact.telegramLink || '';
+    document.getElementById('c-businessName').value  = allContact.businessName || '';
+    document.getElementById('c-tagline').value       = allContact.tagline      || '';
   }
 
   function validateContacts() {
