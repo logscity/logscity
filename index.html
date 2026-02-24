@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LogsCity — Premium Logs & Timber Marketplace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#080B14;--surface:#0D1220;--card:#111827;
+      --border:rgba(56,189,248,0.12);--accent:#38BDF8;--accent2:#A78BFA;
+      --green:#34D399;--red:#F87171;--muted:#64748B;
+      --text:#E2E8F0;--subtext:#94A3B8;--wa:#25D366;--tg:#229ED9;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;}
+    body::before{
+      content:'';position:fixed;inset:0;
+      background-image:linear-gradient(rgba(56,189,248,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(56,189,248,0.03) 1px,transparent 1px);
+      background-size:40px 40px;pointer-events:none;z-index:0;
+    }
+    body::after{
+      content:'';position:fixed;top:-20%;left:-10%;width:60vw;height:60vw;
+      background:radial-gradient(circle,rgba(56,189,248,0.06) 0%,transparent 70%);
+      pointer-events:none;z-index:0;
+    }
+
+    /* NAV */
+    nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:68px;background:rgba(8,11,20,0.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
+    .logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+    .logo-icon{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:18px;box-shadow:0 0 20px rgba(56,189,248,0.3);}
+    .logo-text{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;color:var(--text);letter-spacing:-0.5px;}
+    .logo-text span{color:var(--accent);}
+    .nav-links{display:flex;gap:10px;align-items:center;}
+    .nav-pill{display:flex;align-items:center;gap:6px;padding:8px 16px;border-radius:100px;text-decoration:none;font-size:0.82rem;font-weight:600;transition:all 0.2s;border:1.5px solid transparent;font-family:'Outfit',sans-serif;}
+    .nav-wa{background:rgba(37,211,102,0.12);color:var(--wa);border-color:rgba(37,211,102,0.25);}
+    .nav-tg{background:rgba(34,158,217,0.12);color:var(--tg);border-color:rgba(34,158,217,0.25);}
+    .nav-wa:hover{background:rgba(37,211,102,0.22);}
+    .nav-tg:hover{background:rgba(34,158,217,0.22);}
+
+    /* HERO */
+    .hero{position:relative;z-index:1;padding:80px 2rem 90px;text-align:center;overflow:hidden;}
+    .hero-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:400px;background:radial-gradient(ellipse,rgba(167,139,250,0.08) 0%,transparent 70%);pointer-events:none;}
+    .hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(56,189,248,0.08);border:1px solid rgba(56,189,248,0.2);color:var(--accent);font-size:0.78rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:6px 18px;border-radius:100px;margin-bottom:24px;}
+    .hero-tag .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent);animation:pulse 2s infinite;}
+    @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.4)}}
+    .hero h1{font-family:'Syne',sans-serif;font-size:clamp(2.4rem,7vw,5rem);font-weight:800;line-height:1.05;margin-bottom:18px;background:linear-gradient(135deg,#fff 30%,var(--accent) 70%,var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .hero p{color:var(--subtext);font-size:1.05rem;max-width:500px;margin:0 auto 36px;line-height:1.65;}
+    .hero-stats{display:flex;gap:32px;justify-content:center;flex-wrap:wrap;}
+    .hero-stat{text-align:center;}
+    .hero-stat-num{font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;color:var(--accent);}
+    .hero-stat-label{font-size:0.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-top:2px;}
+
+    /* FILTER */
+    .filter-section{position:relative;z-index:1;padding:0 2rem 20px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;max-width:1260px;margin:0 auto;}
+    .filter-label{font-size:0.75rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-right:4px;}
+    .f-btn{padding:7px 18px;border-radius:100px;border:1px solid var(--border);background:transparent;cursor:pointer;font-family:'Outfit',sans-serif;font-size:0.83rem;font-weight:500;color:var(--subtext);transition:all 0.2s;display:flex;align-items:center;gap:6px;}
+    .f-btn:hover,.f-btn.active{background:rgba(56,189,248,0.1);border-color:rgba(56,189,248,0.4);color:var(--accent);}
+
+    /* GRID */
+    .grid-section{position:relative;z-index:1;padding:0 2rem 80px;}
+    .products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:24px;max-width:1200px;margin:0 auto;}
+
+    /* CARD */
+    .card{background:var(--card);border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:transform 0.3s,border-color 0.3s,box-shadow 0.3s;animation:fadeUp 0.5s ease both;cursor:default;}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+    .card:hover{transform:translateY(-5px);border-color:rgba(56,189,248,0.3);box-shadow:0 0 40px rgba(56,189,248,0.08);}
+    .card.hidden{display:none;}
+    .card-img-wrap{position:relative;}
+    .card-img{width:100%;height:180px;object-fit:cover;display:block;}
+    .card-img-fallback{width:100%;height:180px;background:linear-gradient(135deg,#1a2235,#0d1829);display:flex;align-items:center;justify-content:center;font-size:3rem;}
+    .card-platform-badge{position:absolute;top:12px;left:12px;display:flex;align-items:center;gap:6px;background:rgba(8,11,20,0.85);backdrop-filter:blur(8px);border:1px solid var(--border);border-radius:100px;padding:5px 12px;font-size:0.72rem;font-weight:700;color:var(--text);letter-spacing:0.5px;}
+    .card-avail{position:absolute;top:12px;right:12px;padding:4px 12px;border-radius:100px;font-size:0.7rem;font-weight:700;letter-spacing:0.5px;}
+    .card-avail.yes{background:rgba(52,211,153,0.15);color:var(--green);border:1px solid rgba(52,211,153,0.3);}
+    .card-avail.no{background:rgba(248,113,113,0.15);color:var(--red);border:1px solid rgba(248,113,113,0.3);}
+    .card-body{padding:18px 20px 20px;}
+    .card-id{font-size:0.7rem;color:var(--muted);font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:5px;}
+    .card-name{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:8px;line-height:1.3;}
+    .card-desc{font-size:0.83rem;color:var(--subtext);line-height:1.55;margin-bottom:14px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+    .card-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;}
+    .card-tag{display:flex;align-items:center;gap:5px;background:rgba(56,189,248,0.07);border:1px solid rgba(56,189,248,0.15);border-radius:8px;padding:4px 10px;font-size:0.73rem;color:var(--accent);font-weight:500;}
+    .card-price{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:var(--text);margin-bottom:16px;}
+    .card-price small{font-size:0.75rem;color:var(--muted);font-weight:400;font-family:'Outfit',sans-serif;}
+    .card-actions{display:flex;gap:8px;}
+    .btn-buy{flex:1;display:flex;align-items:center;justify-content:center;gap:7px;padding:11px 14px;border-radius:12px;font-family:'Outfit',sans-serif;font-size:0.82rem;font-weight:600;cursor:pointer;border:none;text-decoration:none;transition:all 0.2s;}
+    .btn-wa{background:rgba(37,211,102,0.12);color:var(--wa);border:1px solid rgba(37,211,102,0.25);}
+    .btn-wa:hover{background:rgba(37,211,102,0.22);transform:translateY(-1px);}
+    .btn-tg{background:rgba(34,158,217,0.12);color:var(--tg);border:1px solid rgba(34,158,217,0.25);}
+    .btn-tg:hover{background:rgba(34,158,217,0.22);transform:translateY(-1px);}
+    .btn-buy-disabled{background:rgba(100,116,139,0.12);color:var(--muted);cursor:not-allowed;border:1px solid transparent;}
+
+    /* STATES */
+    .state-box{grid-column:1/-1;text-align:center;padding:80px 20px;}
+    .state-spinner{width:44px;height:44px;border:3px solid rgba(56,189,248,0.15);border-top-color:var(--accent);border-radius:50%;animation:spin 0.8s linear infinite;margin:0 auto 16px;}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .state-box h3{font-family:'Syne',sans-serif;font-size:1.4rem;color:var(--text);margin-bottom:6px;}
+    .state-box p{color:var(--muted);font-size:0.9rem;}
+
+    /* CONTACT */
+    .contact-section{position:relative;z-index:1;background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:64px 2rem;text-align:center;}
+    .contact-section h2{font-family:'Syne',sans-serif;font-size:clamp(1.6rem,4vw,2.4rem);font-weight:800;margin-bottom:10px;background:linear-gradient(135deg,#fff 40%,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .contact-section p{color:var(--subtext);margin-bottom:28px;font-size:0.95rem;}
+    .contact-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+    .contact-btn{display:flex;align-items:center;justify-content:center;gap:10px;padding:14px 28px;border-radius:14px;font-family:'Outfit',sans-serif;font-size:0.95rem;font-weight:700;cursor:pointer;border:none;color:#fff;text-decoration:none;transition:all 0.2s;}
+    .contact-btn.wa{background:linear-gradient(135deg,#25D366,#1da851);}
+    .contact-btn.tg{background:linear-gradient(135deg,#229ED9,#1a7fb5);}
+    .contact-btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.35);}
+
+    /* FOOTER */
+    footer{position:relative;z-index:1;background:var(--surface);border-top:1px solid var(--border);padding:32px 2rem;text-align:center;}
+    .footer-logo{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;color:var(--text);margin-bottom:10px;}
+    .footer-logo span{color:var(--accent);}
+    .footer-links{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:12px;}
+    .footer-links a{color:var(--subtext);text-decoration:none;font-size:0.85rem;transition:color 0.2s;}
+    .footer-links a:hover{color:var(--accent);}
+    footer p{color:var(--muted);font-size:0.78rem;}
+
+    @media(max-width:600px){
+      nav{padding:0 1rem;}
+      .nav-links{gap:6px;}
+      .nav-pill{padding:7px 12px;font-size:0.78rem;}
+      .hero{padding:56px 1rem 70px;}
+      .hero-stats{gap:20px;}
+      .filter-section,.grid-section{padding-left:1rem;padding-right:1rem;}
+      .card-actions{flex-direction:column;}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="#">
+    <div class="logo-icon">🪵</div>
+    <div class="logo-text">Logs<span>City</span></div>
+  </a>
+  <div class="nav-links">
+    <a id="nav-wa" class="nav-pill nav-wa" href="#" target="_blank">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.864L.057 23.5l5.797-1.522A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.686-.505-5.231-1.387l-.374-.22-3.443.904.92-3.356-.243-.386A9.964 9.964 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+      WhatsApp
+    </a>
+    <a id="nav-tg" class="nav-pill nav-tg" href="#" target="_blank">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.04 9.608c-.15.672-.546.836-1.106.52l-3.064-2.258-1.479 1.423c-.163.163-.3.3-.616.3l.22-3.106 5.663-5.117c.246-.22-.054-.342-.384-.122L6.26 14.748l-2.999-.937c-.653-.204-.666-.653.136-.966l11.7-4.513c.544-.198 1.02.133.465.916z"/></svg>
+      Telegram
+    </a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-tag"><div class="dot"></div> Nigeria's Trusted Logs Marketplace</div>
+  <h1>Premium Logs &<br>Timber Marketplace</h1>
+  <p>Quality hardwood, softwood, firewood and timber — sourced sustainably, delivered fast, trusted by hundreds of buyers.</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="hero-stat-num" id="stat-products">—</div><div class="hero-stat-label">Products</div></div>
+    <div class="hero-stat"><div class="hero-stat-num" id="stat-cats">—</div><div class="hero-stat-label">Categories</div></div>
+    <div class="hero-stat"><div class="hero-stat-num">24/7</div><div class="hero-stat-label">Support</div></div>
+  </div>
+</section>
+
+<div class="filter-section" id="filter-bar">
+  <span class="filter-label">Category:</span>
+  <button class="f-btn active" data-cat="all">🌲 All</button>
+</div>
+
+<section class="grid-section">
+  <div class="products-grid" id="product-grid">
+    <div class="state-box"><div class="state-spinner"></div><p>Loading products…</p></div>
+  </div>
+</section>
+
+<section class="contact-section" id="contact">
+  <h2>Ready to Order?</h2>
+  <p>Chat with us directly and we'll handle the rest — fast delivery guaranteed.</p>
+  <div class="contact-btns">
+    <a id="contact-wa" href="#" class="contact-btn wa" target="_blank">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.864L.057 23.5l5.797-1.522A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.686-.505-5.231-1.387l-.374-.22-3.443.904.92-3.356-.243-.386A9.964 9.964 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+      Order via WhatsApp
+    </a>
+    <a id="contact-tg" href="#" class="contact-btn tg" target="_blank">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.04 9.608c-.15.672-.546.836-1.106.52l-3.064-2.258-1.479 1.423c-.163.163-.3.3-.616.3l.22-3.106 5.663-5.117c.246-.22-.054-.342-.384-.122L6.26 14.748l-2.999-.937c-.653-.204-.666-.653.136-.966l11.7-4.513c.544-.198 1.02.133.465.916z"/></svg>
+      Order via Telegram
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Logs<span>City</span></div>
+  <div class="footer-links">
+    <a href="https://wa.me/2349131556247" target="_blank">📱 WhatsApp: 09131556247</a>
+    <a href="https://t.me/Logscity855" target="_blank">✈️ Telegram: @Logscity855</a>
+  </div>
+  <p>© 2024 LogsCity. All rights reserved. Premium Logs & Timber Marketplace.</p>
+</footer>
+
+<script src="product.js"></script>
+<script>
+  const SERVER = 'https://your-server.onrender.com'; // UPDATE after deploy
+  let allProducts = [], allContact = {}, activeFilter = 'all';
+
+  async function init() {
+    try {
+      const res = await fetch(`${SERVER}/api/products`);
+      const data = await res.json();
+      allProducts = data.products || PRODUCTS;
+      allContact  = data.contact  || CONTACT;
+    } catch {
+      allProducts = PRODUCTS;
+      allContact  = CONTACT;
+    }
+    setupContacts();
+    buildFilters();
+    render();
+    document.getElementById('stat-products').textContent = allProducts.length + '+';
+    document.getElementById('stat-cats').textContent = new Set(allProducts.map(p => p.category)).size;
+  }
+
+  function setupContacts() {
+    const waBase = `https://wa.me/${allContact.whatsapp}?text=Hello+LogsCity!+I+want+to+order+a+product.`;
+    document.getElementById('nav-wa').href     = waBase;
+    document.getElementById('contact-wa').href = waBase;
+    document.getElementById('nav-tg').href     = allContact.telegramLink || 'https://t.me/Logscity855';
+    document.getElementById('contact-tg').href = allContact.telegramLink || 'https://t.me/Logscity855';
+  }
+
+  function buildFilters() {
+    const cats  = ['all', ...new Set(allProducts.map(p => p.category))];
+    const bar   = document.getElementById('filter-bar');
+    const icons = {Hardwood:'🪵',Softwood:'🌲','Treated Wood':'🔩',Firewood:'🔥',Bamboo:'🎋',Timber:'🏗️'};
+    bar.innerHTML = '<span class="filter-label">Category:</span>';
+    cats.forEach(cat => {
+      const btn = document.createElement('button');
+      btn.className   = 'f-btn' + (cat === 'all' ? ' active' : '');
+      btn.dataset.cat = cat;
+      btn.textContent = cat === 'all' ? '🌲 All' : (icons[cat] || '📦') + ' ' + cat;
+      btn.onclick = () => {
+        document.querySelectorAll('.f-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeFilter = cat;
+        render();
+      };
+      bar.appendChild(btn);
+    });
+  }
+
+  function makeWALink(p) {
+    const msg = encodeURIComponent(`Hello LogsCity! 🪵\n\nI want to order:\n\n📦 Product: ${p.name}\n🆔 ID: ${p.id}\n💰 Price: ₦${Number(p.price).toLocaleString()} ${p.unit}\n📂 Category: ${p.category}\n\nPlease confirm availability and delivery details. Thank you!`);
+    return `https://wa.me/${allContact.whatsapp}?text=${msg}`;
+  }
+
+  function makeTGLink(p) {
+    const msg = encodeURIComponent(`Hello LogsCity! 🪵\n\nI want to order:\n📦 Product: ${p.name}\n🆔 ID: ${p.id}\n💰 Price: ₦${Number(p.price).toLocaleString()} ${p.unit}\n📂 Category: ${p.category}\n\nPlease confirm availability and delivery details. Thank you!`);
+    return `https://t.me/${(allContact.telegram||'@Logscity855').replace('@','')}?text=${msg}`;
+  }
+
+  function render() {
+    const list = activeFilter === 'all' ? allProducts : allProducts.filter(p => p.category === activeFilter);
+    const grid = document.getElementById('product-grid');
+    if (!list.length) {
+      grid.innerHTML = `<div class="state-box"><div style="font-size:3rem;margin-bottom:12px">📭</div><h3>No products found</h3><p>Try a different filter or check back soon!</p></div>`;
+      return;
+    }
+    grid.innerHTML = list.map((p, i) => {
+      const avail = p.stock !== 'out';
+      const stockLabel = p.stock === 'available' ? '● In Stock' : p.stock === 'limited' ? '● Limited' : '● Out of Stock';
+      return `
+        <div class="card" style="animation-delay:${i*0.06}s">
+          <div class="card-img-wrap">
+            ${p.image ? `<img class="card-img" src="${x(p.image)}" alt="${x(p.name)}" loading="lazy" onerror="this.outerHTML='<div class=card-img-fallback>🪵</div>'">` : `<div class="card-img-fallback">🪵</div>`}
+            <div class="card-platform-badge">📦 ${x(p.category)}</div>
+            <div class="card-avail ${avail?'yes':'no'}">${stockLabel}</div>
+          </div>
+          <div class="card-body">
+            <div class="card-id">${x(p.id)}</div>
+            <div class="card-name">${x(p.name)}</div>
+            <div class="card-desc">${x(p.description)}</div>
+            <div class="card-tags">
+              <span class="card-tag">📦 ${x(p.unit)}</span>
+              ${p.featured ? '<span class="card-tag">⭐ Featured</span>' : ''}
+            </div>
+            <div class="card-price">₦${Number(p.price).toLocaleString()}<small> / ${x(p.unit)}</small></div>
+            <div class="card-actions">
+              ${avail
+                ? `<a href="${makeWALink(p)}" target="_blank" class="btn-buy btn-wa">📱 WhatsApp</a><a href="${makeTGLink(p)}" target="_blank" class="btn-buy btn-tg">✈️ Telegram</a>`
+                : `<button class="btn-buy btn-buy-disabled" disabled>Out of Stock</button>`}
+            </div>
+          </div>
+        </div>`;
+    }).join('');
+  }
+
+  function x(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+  init();
+</script>
+</body>
+</html>
