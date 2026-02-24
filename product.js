@@ -1,78 +1,90 @@
-// LogsCity Product Database
+// LogsCity Social Media Accounts Database
 // Auto-managed by admin panel — do not edit manually
 
 const PRODUCTS = [
   {
     id: "LC-001",
-    name: "Premium Hardwood Logs",
-    price: 15000,
+    name: "Instagram Aged Account",
+    price: 12000,
     currency: "NGN",
-    category: "Hardwood",
-    description: "High-quality hardwood logs, perfect for construction and furniture making. Sourced from sustainably managed forests.",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",
-    unit: "per bundle",
+    category: "Instagram",
+    description: "Premium aged Instagram account with real followers. Verified email included. Ready for immediate use.",
+    image: "https://images.unsplash.com/photo-1611262588024-d12430b98920?w=600&q=80",
+    unit: "per account",
+    followers: "5K–10K",
+    accountAge: "2 years",
     stock: "available",
     featured: true
   },
   {
     id: "LC-002",
-    name: "Softwood Pine Logs",
+    name: "Facebook Business Account",
     price: 8500,
     currency: "NGN",
-    category: "Softwood",
-    description: "Fresh-cut pine logs ideal for roofing, scaffolding, and light construction work.",
-    image: "https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&q=80",
-    unit: "per piece",
+    category: "Facebook",
+    description: "Aged Facebook account with business page access. Clean history, verified identity, perfect for ads.",
+    image: "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=600&q=80",
+    unit: "per account",
+    followers: "1K–3K",
+    accountAge: "3 years",
     stock: "available",
     featured: false
   },
   {
     id: "LC-003",
-    name: "Treated Timber Planks",
-    price: 22000,
+    name: "TikTok Creator Account",
+    price: 15000,
     currency: "NGN",
-    category: "Treated Wood",
-    description: "Pressure-treated timber planks for outdoor use, resistant to rot, insects, and weather.",
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80",
-    unit: "per pack (10 planks)",
+    category: "TikTok",
+    description: "High-engagement TikTok account with genuine following. Monetization eligible. Original login credentials.",
+    image: "https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=600&q=80",
+    unit: "per account",
+    followers: "10K–50K",
+    accountAge: "1.5 years",
     stock: "available",
     featured: true
   },
   {
     id: "LC-004",
-    name: "Firewood Bundle",
-    price: 3500,
+    name: "Twitter/X Verified Account",
+    price: 25000,
     currency: "NGN",
-    category: "Firewood",
-    description: "Dry and seasoned firewood, ready to burn. Excellent for cooking, heating, and outdoor fires.",
-    image: "https://images.unsplash.com/photo-1445548808290-dab79c9a3bdf?w=600&q=80",
-    unit: "per bundle",
-    stock: "available",
-    featured: false
-  },
-  {
-    id: "LC-005",
-    name: "Mahogany Logs",
-    price: 45000,
-    currency: "NGN",
-    category: "Hardwood",
-    description: "Premium mahogany logs for luxury furniture and high-end interior finishing. Rich grain, durable quality.",
-    image: "https://images.unsplash.com/photo-1567361808960-dec9cb578182?w=600&q=80",
-    unit: "per log",
+    category: "Twitter",
+    description: "Aged Twitter/X account with established presence. Blue tick eligible. Original email and credentials.",
+    image: "https://images.unsplash.com/photo-1611605698335-8b1569810432?w=600&q=80",
+    unit: "per account",
+    followers: "2K–8K",
+    accountAge: "4 years",
     stock: "limited",
     featured: true
   },
   {
-    id: "LC-006",
-    name: "Bamboo Poles",
-    price: 1200,
+    id: "LC-005",
+    name: "Telegram Channel",
+    price: 18000,
     currency: "NGN",
-    category: "Bamboo",
-    description: "Strong, lightweight bamboo poles suitable for scaffolding, fencing, and decorative projects.",
-    image: "https://images.unsplash.com/photo-1610878180933-123728745d41?w=600&q=80",
-    unit: "per pole",
+    category: "Telegram",
+    description: "Active Telegram channel with real subscribers. Niche-ready, high open rates. Full admin access transferred.",
+    image: "https://images.unsplash.com/photo-1611746872915-64382b5c76da?w=600&q=80",
+    unit: "per channel",
+    followers: "3K–15K",
+    accountAge: "2 years",
     stock: "available",
     featured: false
+  },
+  {
+    id: "LC-006",
+    name: "YouTube Monetized Channel",
+    price: 45000,
+    currency: "NGN",
+    category: "YouTube",
+    description: "Fully monetized YouTube channel meeting all Partner Program requirements. Includes AdSense account.",
+    image: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&q=80",
+    unit: "per channel",
+    followers: "1K+ subs",
+    accountAge: "3 years",
+    stock: "limited",
+    featured: true
   }
 ];
 
@@ -81,7 +93,7 @@ const CONTACT = {
   telegram: "@Logscity855",
   telegramLink: "https://t.me/Logscity855",
   businessName: "LogsCity",
-  tagline: "Premium Logs & Timber Marketplace"
+  tagline: "Nigeria's Trusted Social Media Accounts Marketplace"
 };
 
 // Export for Node.js environments
