@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>LogsCity — Premium Logs & Timber Marketplace</title>
+  <title>LogsCity — Social Media Accounts Marketplace</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
@@ -91,6 +91,14 @@
     .btn-tg:hover{background:rgba(34,158,217,0.22);transform:translateY(-1px);}
     .btn-buy-disabled{background:rgba(100,116,139,0.12);color:var(--muted);cursor:not-allowed;border:1px solid transparent;}
 
+    /* PLATFORM BADGE COLORS */
+    [data-platform="Instagram"] .card-platform-badge{color:#E1306C;border-color:rgba(225,48,108,0.3);}
+    [data-platform="Facebook"]  .card-platform-badge{color:#1877F2;border-color:rgba(24,119,242,0.3);}
+    [data-platform="TikTok"]    .card-platform-badge{color:#fff;}
+    [data-platform="Twitter"]   .card-platform-badge{color:#1DA1F2;border-color:rgba(29,161,242,0.3);}
+    [data-platform="Telegram"]  .card-platform-badge{color:#229ED9;border-color:rgba(34,158,217,0.3);}
+    [data-platform="YouTube"]   .card-platform-badge{color:#FF0000;border-color:rgba(255,0,0,0.3);}
+
     /* STATES */
     .state-box{grid-column:1/-1;text-align:center;padding:80px 20px;}
     .state-spinner{width:44px;height:44px;border:3px solid rgba(56,189,248,0.15);border-top-color:var(--accent);border-radius:50%;animation:spin 0.8s linear infinite;margin:0 auto 16px;}
@@ -132,7 +140,7 @@
 
 <nav>
   <a class="logo" href="#">
-    <div class="logo-icon">🪵</div>
+    <div class="logo-icon">LC</div>
     <div class="logo-text">Logs<span>City</span></div>
   </a>
   <div class="nav-links">
@@ -149,19 +157,19 @@
 
 <section class="hero">
   <div class="hero-glow"></div>
-  <div class="hero-tag"><div class="dot"></div> Nigeria's Trusted Logs Marketplace</div>
-  <h1>Premium Logs &<br>Timber Marketplace</h1>
-  <p>Quality hardwood, softwood, firewood and timber — sourced sustainably, delivered fast, trusted by hundreds of buyers.</p>
+  <div class="hero-tag"><div class="dot"></div> Nigeria's Trusted Social Media Marketplace</div>
+  <h1>Buy Social Media<br>Account Logs</h1>
+  <p>Premium aged accounts across all major platforms. Fast delivery, verified access, and trusted by hundreds of buyers.</p>
   <div class="hero-stats">
-    <div class="hero-stat"><div class="hero-stat-num" id="stat-products">—</div><div class="hero-stat-label">Products</div></div>
-    <div class="hero-stat"><div class="hero-stat-num" id="stat-cats">—</div><div class="hero-stat-label">Categories</div></div>
+    <div class="hero-stat"><div class="hero-stat-num" id="stat-products">—</div><div class="hero-stat-label">Listings</div></div>
+    <div class="hero-stat"><div class="hero-stat-num" id="stat-cats">—</div><div class="hero-stat-label">Platforms</div></div>
     <div class="hero-stat"><div class="hero-stat-num">24/7</div><div class="hero-stat-label">Support</div></div>
   </div>
 </section>
 
 <div class="filter-section" id="filter-bar">
-  <span class="filter-label">Category:</span>
-  <button class="f-btn active" data-cat="all">🌲 All</button>
+  <span class="filter-label">Platform:</span>
+  <button class="f-btn active" data-cat="all">🌐 All</button>
 </div>
 
 <section class="grid-section">
@@ -172,7 +180,7 @@
 
 <section class="contact-section" id="contact">
   <h2>Ready to Order?</h2>
-  <p>Chat with us directly and we'll handle the rest — fast delivery guaranteed.</p>
+  <p>Contact us directly and we'll deliver your account log fast.</p>
   <div class="contact-btns">
     <a id="contact-wa" href="#" class="contact-btn wa" target="_blank">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.864L.057 23.5l5.797-1.522A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.686-.505-5.231-1.387l-.374-.22-3.443.904.92-3.356-.243-.386A9.964 9.964 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
@@ -191,17 +199,23 @@
     <a href="https://wa.me/2349131556247" target="_blank">📱 WhatsApp: 09131556247</a>
     <a href="https://t.me/Logscity855" target="_blank">✈️ Telegram: @Logscity855</a>
   </div>
-  <p>© 2024 LogsCity. All rights reserved. Premium Logs & Timber Marketplace.</p>
+  <p>© 2024 LogsCity. All rights reserved. Trusted Social Media Accounts Marketplace.</p>
 </footer>
 
 <script src="product.js"></script>
 <script>
   const SERVER = 'https://logscity.onrender.com'; // UPDATE after deploy
+
+  const PLATFORM_ICONS = {
+    Instagram:'📸', Facebook:'📘', TikTok:'🎵',
+    Twitter:'🐦', Telegram:'✈️', YouTube:'▶️'
+  };
+
   let allProducts = [], allContact = {}, activeFilter = 'all';
 
   async function init() {
     try {
-      const res = await fetch(`${SERVER}/api/products`);
+      const res  = await fetch(`${SERVER}/api/products`);
       const data = await res.json();
       allProducts = data.products || PRODUCTS;
       allContact  = data.contact  || CONTACT;
@@ -217,7 +231,7 @@
   }
 
   function setupContacts() {
-    const waBase = `https://wa.me/${allContact.whatsapp}?text=Hello+LogsCity!+I+want+to+order+a+product.`;
+    const waBase = `https://wa.me/${allContact.whatsapp}?text=Hello+LogsCity!+I+want+to+order+a+social+media+account.`;
     document.getElementById('nav-wa').href     = waBase;
     document.getElementById('contact-wa').href = waBase;
     document.getElementById('nav-tg').href     = allContact.telegramLink || 'https://t.me/Logscity855';
@@ -225,15 +239,14 @@
   }
 
   function buildFilters() {
-    const cats  = ['all', ...new Set(allProducts.map(p => p.category))];
-    const bar   = document.getElementById('filter-bar');
-    const icons = {Hardwood:'🪵',Softwood:'🌲','Treated Wood':'🔩',Firewood:'🔥',Bamboo:'🎋',Timber:'🏗️'};
-    bar.innerHTML = '<span class="filter-label">Category:</span>';
+    const cats = ['all', ...new Set(allProducts.map(p => p.category))];
+    const bar  = document.getElementById('filter-bar');
+    bar.innerHTML = '<span class="filter-label">Platform:</span>';
     cats.forEach(cat => {
       const btn = document.createElement('button');
       btn.className   = 'f-btn' + (cat === 'all' ? ' active' : '');
       btn.dataset.cat = cat;
-      btn.textContent = cat === 'all' ? '🌲 All' : (icons[cat] || '📦') + ' ' + cat;
+      btn.textContent = cat === 'all' ? '🌐 All' : (PLATFORM_ICONS[cat] || '📱') + ' ' + cat;
       btn.onclick = () => {
         document.querySelectorAll('.f-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
@@ -245,52 +258,77 @@
   }
 
   function makeWALink(p) {
-    const msg = encodeURIComponent(`Hello LogsCity! 🪵\n\nI want to order:\n\n📦 Product: ${p.name}\n🆔 ID: ${p.id}\n💰 Price: ₦${Number(p.price).toLocaleString()} ${p.unit}\n📂 Category: ${p.category}\n\nPlease confirm availability and delivery details. Thank you!`);
+    const icon = PLATFORM_ICONS[p.category] || '📱';
+    const msg  = encodeURIComponent(
+      `Hello LogsCity! 👋\n\nI want to order the following account:\n\n` +
+      `${icon} Platform: ${p.category}\n` +
+      `📛 Product: ${p.name}\n` +
+      `🆔 ID: ${p.id}\n` +
+      `💰 Price: ₦${Number(p.price).toLocaleString()} / ${p.unit}\n` +
+      `👥 Followers: ${p.followers || 'N/A'}\n` +
+      `🕒 Account Age: ${p.accountAge || 'N/A'}\n\n` +
+      `Please confirm availability and let me know how to proceed. Thank you!`
+    );
     return `https://wa.me/${allContact.whatsapp}?text=${msg}`;
   }
 
   function makeTGLink(p) {
-    const msg = encodeURIComponent(`Hello LogsCity! 🪵\n\nI want to order:\n📦 Product: ${p.name}\n🆔 ID: ${p.id}\n💰 Price: ₦${Number(p.price).toLocaleString()} ${p.unit}\n📂 Category: ${p.category}\n\nPlease confirm availability and delivery details. Thank you!`);
-    return `https://t.me/${(allContact.telegram||'@Logscity855').replace('@','')}?text=${msg}`;
+    const icon = PLATFORM_ICONS[p.category] || '📱';
+    const msg  = encodeURIComponent(
+      `Hello LogsCity! 👋\n\nI want to order the following account:\n\n` +
+      `${icon} Platform: ${p.category}\n` +
+      `📛 Product: ${p.name}\n` +
+      `🆔 ID: ${p.id}\n` +
+      `💰 Price: ₦${Number(p.price).toLocaleString()} / ${p.unit}\n` +
+      `👥 Followers: ${p.followers || 'N/A'}\n` +
+      `🕒 Account Age: ${p.accountAge || 'N/A'}\n\n` +
+      `Please confirm availability and let me know how to proceed. Thank you!`
+    );
+    return `https://t.me/${(allContact.telegram || '@Logscity855').replace('@', '')}?text=${msg}`;
   }
 
   function render() {
     const list = activeFilter === 'all' ? allProducts : allProducts.filter(p => p.category === activeFilter);
     const grid = document.getElementById('product-grid');
     if (!list.length) {
-      grid.innerHTML = `<div class="state-box"><div style="font-size:3rem;margin-bottom:12px">📭</div><h3>No products found</h3><p>Try a different filter or check back soon!</p></div>`;
+      grid.innerHTML = `<div class="state-box"><div style="font-size:3rem;margin-bottom:12px">📭</div><h3>No accounts found</h3><p>Try a different platform or check back soon!</p></div>`;
       return;
     }
     grid.innerHTML = list.map((p, i) => {
-      const avail = p.stock !== 'out';
-      const stockLabel = p.stock === 'available' ? '● In Stock' : p.stock === 'limited' ? '● Limited' : '● Out of Stock';
+      const avail      = p.stock !== 'out';
+      const stockLabel = p.stock === 'available' ? '● Live' : p.stock === 'limited' ? '● Limited' : '● Sold Out';
+      const icon       = PLATFORM_ICONS[p.category] || '📱';
       return `
-        <div class="card" style="animation-delay:${i*0.06}s">
+        <div class="card" data-platform="${x(p.category)}" style="animation-delay:${i*0.06}s">
           <div class="card-img-wrap">
-            ${p.image ? `<img class="card-img" src="${x(p.image)}" alt="${x(p.name)}" loading="lazy" onerror="this.outerHTML='<div class=card-img-fallback>🪵</div>'">` : `<div class="card-img-fallback">🪵</div>`}
-            <div class="card-platform-badge">📦 ${x(p.category)}</div>
-            <div class="card-avail ${avail?'yes':'no'}">${stockLabel}</div>
+            ${p.image
+              ? `<img class="card-img" src="${x(p.image)}" alt="${x(p.name)}" loading="lazy" onerror="this.outerHTML='<div class=card-img-fallback>${icon}</div>'">`
+              : `<div class="card-img-fallback">${icon}</div>`}
+            <div class="card-platform-badge">${icon} ${x(p.category)}</div>
+            <div class="card-avail ${avail ? 'yes' : 'no'}">${stockLabel}</div>
           </div>
           <div class="card-body">
             <div class="card-id">${x(p.id)}</div>
             <div class="card-name">${x(p.name)}</div>
             <div class="card-desc">${x(p.description)}</div>
             <div class="card-tags">
-              <span class="card-tag">📦 ${x(p.unit)}</span>
-              ${p.featured ? '<span class="card-tag">⭐ Featured</span>' : ''}
+              ${p.followers  ? `<span class="card-tag">👥 ${x(p.followers)}</span>`  : ''}
+              ${p.accountAge ? `<span class="card-tag">🕒 ${x(p.accountAge)}</span>` : ''}
+              ${p.featured   ? `<span class="card-tag">⭐ Featured</span>`            : ''}
             </div>
             <div class="card-price">₦${Number(p.price).toLocaleString()}<small> / ${x(p.unit)}</small></div>
             <div class="card-actions">
               ${avail
-                ? `<a href="${makeWALink(p)}" target="_blank" class="btn-buy btn-wa">📱 WhatsApp</a><a href="${makeTGLink(p)}" target="_blank" class="btn-buy btn-tg">✈️ Telegram</a>`
-                : `<button class="btn-buy btn-buy-disabled" disabled>Out of Stock</button>`}
+                ? `<a href="${makeWALink(p)}" target="_blank" class="btn-buy btn-wa">📱 WhatsApp</a>
+                   <a href="${makeTGLink(p)}" target="_blank" class="btn-buy btn-tg">✈️ Telegram</a>`
+                : `<button class="btn-buy btn-buy-disabled" disabled>Sold Out</button>`}
             </div>
           </div>
         </div>`;
     }).join('');
   }
 
-  function x(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+  function x(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
   init();
 </script>
 </body>
